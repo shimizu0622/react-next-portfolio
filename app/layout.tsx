@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './_components/Header/Header';
+import Footer from './_components/Footer/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoSansJP = Noto_Sans_JP({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'Welcome to my portfolio website',
+  title: 'ポートフォリオ',
+  description: '私のポートフォリオサイトへようこそ',
 };
 
 export default function RootLayout({
@@ -18,10 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
+      <body className={notoSansJP.className}>
+        <div className="flex min-h-screen flex-col bg-black">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-16">
             {children}
           </main>
           <Footer />
