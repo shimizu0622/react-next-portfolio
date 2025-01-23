@@ -1,6 +1,7 @@
-// app/page.tsx
 import Link from 'next/link';
 import styles from './page.module.css';
+import React from 'react';
+import Timeline from './_components/Timeline';
 
 export default function Home() {
   return (
@@ -8,17 +9,10 @@ export default function Home() {
       <section className={styles.hero}>
         <h1 className={styles.title}>ポートフォリオサイトへようこそ</h1>
         <p className={styles.description}>
-          私のポートフォリオサイトにお越しいただき、ありがとうございます。
+          私のポートフォリオサイトにお越しいただき、ありがとうございます。<br />
           このサイトでは、私自身についてと将来の目標について紹介しています。
         </p>
-        <div className={styles.buttons}>
-          <Link href="/profile" className={styles.button}>
-            自己紹介を見る
-          </Link>
-          <Link href="/future" className={styles.buttonOutline}>
-            目標を見る
-          </Link>
-        </div>
+        <Timeline />
       </section>
     </div>
   );

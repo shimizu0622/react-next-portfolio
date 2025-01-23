@@ -1,0 +1,8 @@
+<div className={styles.buttons}>
+          <Link href="/profile" className={styles.button}>
+            自己紹介を見る
+          </Link>
+          <Link href="/future" className={styles.buttonOutline}>
+            目標を見る
+          </Link>
+        </div>
