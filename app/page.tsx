@@ -13,6 +13,14 @@ export default function Home() {
           このサイトでは、私自身についてと将来の目標について紹介しています。
         </p>
         <Timeline />
+        <div className={`${styles.buttons} mt-5`}>
+          <Link href="/profile" className={styles.button}>
+            自己紹介へ
+          </Link>
+          <Link href="/future" className={styles.buttonOutline}>
+            今後の目標へ
+          </Link>
+        </div>
       </section>
     </div>
     

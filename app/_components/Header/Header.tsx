@@ -10,10 +10,10 @@ const Header = () => {
         </Link>
         <div className={styles.links}>
           <Link href="/profile" className={styles.link}>
-            自己紹介
+            Profile
           </Link>
           <Link href="/future" className={styles.link}>
-            今後の目標
+            Future goles
           </Link>
         </div>
       </nav>
