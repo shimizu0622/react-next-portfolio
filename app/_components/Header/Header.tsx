@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/app/page.tsx" className={styles.logo}>
           Portfolio
         </Link>
 
@@ -49,7 +49,7 @@ const Header = () => {
         </button>
 
         <div className={`${styles.links} ${isMenuOpen ? styles.show : ''}`}>
-          <Link href="/profile" className={styles.link} onClick={() => setIsMenuOpen(false)}>
+          <Link href="/Profile" className={styles.link} onClick={() => setIsMenuOpen(false)}>
             Profile
           </Link>
           <Link href="/future" className={styles.link} onClick={() => setIsMenuOpen(false)}>
