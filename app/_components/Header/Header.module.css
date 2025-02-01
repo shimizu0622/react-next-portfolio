@@ -1,41 +1,146 @@
 .header {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  z-index: 60;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.link:hover {
+  color: #64748b;
+}
+
+/* ハンバーガーメニューボタン */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 60;
+  width: 30px;
+  height: 30px;
+}
+
+.menuBar {
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.menuBar::before,
+.menuBar::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  transition: all 0.4s ease;
+  left: 0;
+}
+
+.menuBar::before {
+  transform: translateY(-10px);
+}
+
+.menuBar::after {
+  transform: translateY(10px);
+}
+
+/* メニューが開いているときのアニメーション */
+.menuBar.open {
+  background-color: transparent;
+}
+
+.menuBar.open::before {
+  transform: rotate(45deg);
+}
+
+.menuBar.open::after {
+  transform: rotate(-45deg);
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .links {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-  }
-  
-  .nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 3rem;
+    transition: all 0.4s ease;
+    z-index: 40;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
+
+  .links.show {
+    right: 0;
   }
-  
-  .links {
-    display: flex;
-    gap: 2rem;
-  }
-  
+
   .link {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-size: 1.25rem;
+    opacity: 0.9;
   }
-  
+
   .link:hover {
-    color: #64748b;
+    opacity: 1;
+    transform: scale(1.05);
   }
+}
+
+/* より大きな画面サイズ */
+@media (min-width: 1024px) {
+  .nav {
+    padding: 0 4rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+}

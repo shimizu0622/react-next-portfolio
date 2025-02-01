@@ -1,66 +1,149 @@
 .container {
-    min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  background: linear-gradient(to right, #ffffff, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: pre-line; /* 改行を有効に */
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  padding: 0 0.5rem;
+}
+
+.description br {
+  display: none; /* モバイルでは改行を無効に */
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 1rem;
+  max-width: 300px; /* ボタンの最大幅を制限 */
+  margin: 0 auto;
+}
+
+.button {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+
+.buttonOutline {
+  background-color: transparent;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.buttonOutline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* タブレット以上のサイズ */
+@media (min-width: 768px) {
+  .container {
     padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
-  
+
   .hero {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 0 2rem;
   }
-  
+
   .title {
     font-size: 3rem;
-    font-weight: bold;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #ffffff, #64748b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
   }
-  
+
   .description {
     font-size: 1.25rem;
-    color: #94a3b8;
     margin-top: 40px;
     margin-bottom: 5rem;
-    line-height: 1.6;
+    padding: 0 1rem;
   }
-  
+
+  .description br {
+    display: block; /* デスクトップでは改行を有効に */
+  }
+
   .buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: auto;
+    max-width: none;
+    padding: 0;
   }
-  
-  .button {
-    background-color: white;
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    text-decoration: none;
+
+  .button, .buttonOutline {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
   }
-  
-  .button:hover {
-    background-color: #e2e8f0;
+}
+
+/* 大きな画面サイズ */
+@media (min-width: 1024px) {
+  .container {
+    padding: 5rem 2rem;
   }
-  
-  .buttonOutline {
-    background-color: transparent;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    border: 2px solid white;
-    transition: all 0.2s ease;
-    text-decoration: none;
+
+  .hero {
+    padding: 0 3rem;
   }
-  
-  .buttonOutline:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+
+  .title {
+    font-size: 3.5rem;
   }
+
+  .description {
+    padding: 0 2rem;
+  }
+
+  .button, .buttonOutline {
+    padding: 0.875rem 2.5rem;
+  }
+}
