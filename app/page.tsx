@@ -16,7 +16,7 @@ export default function Home() {
         </p>
         <Timeline />
         <div className={`${styles.buttons} mt-5`}>
-          <Link href="/profile" className={styles.button}>
+          <Link href="/Profile" className={styles.button}>
             自己紹介へ
           </Link>
           <Link href="/future" className={styles.buttonOutline}>
