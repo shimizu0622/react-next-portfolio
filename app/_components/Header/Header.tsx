@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <Link href="/app/page.tsx" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           Portfolio
         </Link>
 
